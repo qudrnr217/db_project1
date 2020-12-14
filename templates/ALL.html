@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>최신순</h1>
+        {% for item in RECENT %}</br>
+        {{ item.name }} </br>
+        {{ item.price }}</br>
+        {{ item.b_data }}</br>
+        {{ item.manufacturer }}</br>
+        <a href=/edit>주문하기</a><br><br>
+        {% endfor %}
+    </body>
+</html>
