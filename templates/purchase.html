@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>구매한 고객들</h1>
+        <h2><a href='/' style="text-decoration:none">Home</a></h2>
+        {% for person in purchase %}</br>
+        주문번호 : {{ person.p_SSN }} </br>
+        이름 : {{ person.p_name }}</br>
+        휴대폰번호 : {{ person.p_num }}</br>
+        주소 : {{ person.p_addr }}</br>
+
+        {% endfor %}
+    
+    </body>
+</html>

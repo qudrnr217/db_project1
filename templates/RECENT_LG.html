@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h1>검색결과</h1>
-        {% for item in result %}</br>
+        <h1>최신순</h1>
+        <h2><a href='/' style="text-decoration:none">Home</a></h2>
+        <h2><a href='/LG'style="text-decoration:none">뒤로가기</a> </h2>
+        {% for item in RECENT_LG %}</br>
         주문번호: {{ item.SSN }}<br>
         {{ item.name }} </br>
         {{ item.price }}</br>

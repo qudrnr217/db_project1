@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            h1{text-align:center;}
+            .a{position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);}
+        </style>
+    </head>
     <body>
+        <h1>고객 정보입력란</h1>
+        <div class='a'>
         <form action="/view" method="post">
+            
+            <input type="integer" name="userOrder" placeholder="주문번호 입력" maxlength="20"/> ※주문하고 싶은 상품의 주문번호를 적으시오 ex)1,2,...<br>
+            <input type="text" name="userName" placeholder="이름을 입력" maxlength="20"/><br>
+            <input type="text" name="userAge" placeholder="나이를 입력" maxlength="20"/><br>
+            <input type="text" name="userSSN" placeholder="주민번호 입력" maxlength="20"/><br>
+            <input type="text" name="userNum" placeholder="휴대폰번호 입력" maxlength="20"/><br>
+            <input type="text" name="userAddr" placeholder="주소를 입력" maxlength="50"/><br>
+            <input type="submit" value="주문하기">
+        
+        </div>
+            <!-- 주문번호 : <input type="integer" name='userOrder'><br>
             이름 : <input type="text" name="userName"><br>
             나이 : <input type="integer" name="userAge"><br>
-            성별 : <input type="text" name="userSex"><br>
             SSN : <input type="text" name="userSSN"><br>
-            <input type="submit" value="전송">
+            휴대폰 번호 : <input type="text" name="userNum"><br>
+            주소 : <input type="text" name="userAddr"><br>
+            <input type="submit" value="주문하기"> -->
         </form>
     </body>
 </html>

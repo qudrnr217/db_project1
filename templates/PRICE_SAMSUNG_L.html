@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action=/SAMSUNG_ method='post'>
+            <h1>가격별(낮은순)</h1>
+            <h2><a href='/' style="text-decoration:none">Home</a></h2>
+            <h2><a href='/SAMSUNG'style="text-decoration:none">뒤로가기</a> </h2>
+            <form action="degree2.jsp">
+                <select name="degree2">
+                    <option value="1">높은순</option>
+                    <option value="2">낮은순</option>
+                </select>
+                <input type='submit' value="선택">
+            </form>
+        {% for item in PRICE_SAMSUNG_L %}</br>
+        주문번호: {{ item.SSN }}<br>
+        {{ item.name }} </br>
+        {{ item.price }}</br>
+        {{ item.b_data }}</br>
+        {{ item.manufacturer }}</br>
+        <a href=/edit>주문하기</a><br><br>
+        {% endfor %}
+    </body>
+</html>

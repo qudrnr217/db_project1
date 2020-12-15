@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            h1 {text-align:center;}
+            .search{text-align:right; display:inline;}
+            .img{float:left; padding: 20px; width:30%;}
+            .img{text-align:center;}
+            .purchase{}
+            
+        </style>
+    </head>
     <body>
+        <div class='search'>
         <h1>휴대폰 판매</h1>
-        <h2><a href=/APPLE>아이폰</a></h2>
-        <h2><a href=/SAMSUNG>삼성</a></h2>
-        <h2><a href=/LG>LG</a></h2>
-        <form action="/result" method="post">               
-            검색 : <input type="text" name="search_name">
-            <input type="submit" value="검색">
-        </form>
-        <h2><a href=/sign_up>회원가입</a></h2>
+        
+            <form action="/result" method="post">               
+                검색 : <input type="text" name="search_name">
+                <input type="submit" value="검색">
+            </form>
+        </div>
+        <div class='purchase'>
+            <a href='/purchase'style="text-decoration:none">구매자 목록</a>
+        </div>
+        <div class='img'>
+        <img src="https://www.bloter.net/wp-content/uploads/2017/09/iphone8-765x592.jpg"  width='225' height='225' >
+        <h2><a href=/APPLE style="text-decoration:none">아이폰</a></h2>
+        </div>
+        
+        <div class='img'>
+        <img src="https://www.bloter.net/wp-content/uploads/2020/01/GalaxyNote10LitePR_mainFF-800x533.jpg"  width='225' height='225'>
+        <h2><a href=/SAMSUNG style="text-decoration:none">삼성</a></h2>
+        </div>
+
+        <div class='img'>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVPCKsAWsVckLEJIB1v8kRL1OKhg7N23_HJHpvdPwLGWG57nQWSOS3bXLZp2otlA4oefgT1L6n&usqp=CAc"
+        width='225' height='225' >
+        <h2><a href=/LG style="text-decoration:none">LG</a></h2>
+        </div>
+        
+        {% with messages = get_flashed_messages()%}
+        {%if messages %}
+        <script type="text/javascript">
+            alert("{{messages[-1]}}");
+        </script>
+        {%endif%}
+        {%endwith%}
+        
+        
+        
+        
     </body>
 </html>

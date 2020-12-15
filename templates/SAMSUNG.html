@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h1>SAMSUNG 종류</h1>
+        <form action=/SAMSUNG method="post">
+            <h1>SAMSUNG 종류</h1>
+            <h2><a href='/' style="text-decoration:none">Home</a></h2>
+            <form action="degree.jsp">
+                <select name="degree">
+                    <option value="1">최신순</option>
+                    <option value="2">가격별</option>
+                </select>
+                <input type='submit' value="선택">
+            </form>
+        
+        <form action=/edit>
         {% for item in SAMSUNG %}</br>
+        주문번호: {{ item.SSN }}<br>
         {{ item.name }} </br>
         {{ item.price }}</br>
         {{ item.b_data }}</br>
+        <input type="submit" value="주문하기"><br><br>
         {% endfor %}
+
+        </form>
     </body>
 </html>

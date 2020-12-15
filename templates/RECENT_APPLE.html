@@ -2,7 +2,10 @@
 <html>
     <body>
         <h1>최신순</h1>
-        {% for item in RECENT %}</br>
+        <h2><a href='/' style="text-decoration:none">Home</a></h2>
+        <h2><a href='/APPLE'style="text-decoration:none">뒤로가기</a> </h2>
+        {% for item in RECENT_APPLE %}</br>
+        주문번호: {{ item.SSN }}<br>
         {{ item.name }} </br>
         {{ item.price }}</br>
         {{ item.b_data }}</br>

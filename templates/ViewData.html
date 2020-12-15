@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            h1{text-align:center;}
+            .b{position:absolute;
+            top:50%; left:50%;
+    transform: translate(-50%, -50%);}
+        </style>
+    </head>
     <body>
-        ViewData Page <br>
+        
+        <form action="/clear" method="post"> 
+        <h1>주문내역</h1><br>
+        <div class='b'>
+        주문번호 :<input value={{userOrder}} name="userOrder"><br>
+        <!-- 주문번호 : {{userOrder}}<br> -->
         이름 : {{userName}} <br>
-        나이 : {{userAge}} <br>
-        성별 : {{userSex}} <br>
-        SSN : {{userSSN}} <br>
+        <!-- <input value={{userName}} name="userName"><br> -->
+        휴대폰 번호 : {{userNum}} <br>
+        <!-- <input value={{userNum}} name="userNum"><br> -->
+        주소 : {{userAddr}}<br>
+        <!-- <input value={{userAddr}} name="userAddr"><br> -->
+        <input type="submit" value="확인">             
+        </form>
+        </div>
     </body>
 </html>
