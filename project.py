@@ -39,15 +39,20 @@ def view():
     userAddr = request.form['userAddr']
     db = sqlite3.connect("phone_info.db")
     db.row_factory = sqlite3.Row
+    print(userOrder)
     db.execute(
         'insert into customer_info (c_name,c_age,c_SSN,c_Num,c_Addr) values (?,?,?,?,?)', (userName,userAge,userSSN,userNum,userAddr)
     )
     db.execute(
         'insert into purchase_info (p_SSN, p_name, p_num, p_addr) values (?,?,?,?)', (userOrder,userName,userNum,userAddr)
     )
+    product=db.execute(
+        "select name from phone_info where SSN == ?", (1,)
+    ).fetchone()
+    print(product)
     db.commit()
     db.close()
-    return render_template('ViewData.html', userOrder=userOrder,userName=userName, userNum=userNum, userAddr=userAddr)
+    return render_template('ViewData.html',product=product, userOrder=userOrder,userName=userName, userNum=userNum, userAddr=userAddr)
 
 # 검색
 @app.route('/search')
@@ -73,7 +78,7 @@ def clear():
     # userName = request.form['userName']
     # userNum= request.form['userNum']
     # userAddr= request.form['userAddr']
-    print(userOrder)
+    # print(userOrder)
     db = sqlite3.connect("phone_info.db")
     db.row_factory = sqlite3.Row
     db.execute("DELETE from phone_info where SSN like ?", (f'%{userOrder}%',))
